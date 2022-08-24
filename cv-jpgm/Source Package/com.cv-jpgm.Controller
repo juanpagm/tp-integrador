@@ -1,0 +1,13 @@
+package com.cv-jpgm.cv-jpgm.Controller;
+
+import org.springframework.web.bin.annotation.RestController;
+
+@RestController
+public class {
+
+    @PostMapping("/empresa")
+    public void nuevoIngreso() {
+    
+        INSERT empresa(empresa, direccion, telefono, mail)
+}
+}
