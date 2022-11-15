@@ -1,4 +1,4 @@
-empresa CREATE TABLE `oferta_laboral`
+CREATE TABLE `oferta_laboral`
 (
  `id`              integer NOT NULL ,
  `cargo_ofrecido`  varchar(100) NOT NULL ,
@@ -10,6 +10,7 @@ PRIMARY KEY (`id`),
 KEY `FK_2` (`id_empresa`),
 CONSTRAINT `FK_2` FOREIGN KEY `FK_2` (`id_empresa`) REFERENCES `empresa` (`id`)
 );
+
 
 
 

@@ -15,12 +15,51 @@
        <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<script type="text/javascript">
+    function mostrar(){
+        document.getElementById("contenedor__login").style.display = "block";
+    }
 
+    function ocultar(){
+        document.getElementById("contenedor__login").style.display = "none";
+    }
+
+    function mostrar_ocultar(){
+        var contenedor__login = document.getElementById("contenedor__login");
+
+        if(contenedor__login.style.display == "none"){
+            mostrar();
+        } else{
+            ocultar();
+        }
+    }
+</script>
+<body>
+  
     <div class="container">
         <nav class="nav-main">
             <img src="img/LOGO2.png" alt="CV LOGO" class="nav-brand">
             <ul class="nav-menu">
+                <script type="text/javascript">
+                                
+                    function ocultar(){
+                        document.getElementById("contenedor__login").style.display = "none";
+                    }
+
+                    function mostrar(){
+                        document.getElementById("contenedor__login").style.display = "block";
+                    }
+                
+                    function mostrar_ocultar(){
+                        var contenedor__login = document.getElementById("contenedor__login");
+                
+                        if(contenedor__login.style.display == "none"){
+                            mostrar();
+                        } else{
+                            ocultar();
+                        }
+                    }
+                </script>
                 <li>
                     <a href="#about">Sobre mi</a>
                 </li>
@@ -36,17 +75,30 @@
                 <li>
                     <a href="#contact">Contacto</a>
                 </li>
+                <li>
+                <a  onclick="mostrar_ocultar()">Login</a>
+                </li>
             </ul>
-        </nav>
-        <hr>
+            </nav>
+        </div>
+            <hr>
+          <section id="contenedor__login">
+            <!--Login-->
+            <form action="main.html" class="formulario__login">
+                <h2>Iniciar Sesión</h2>
+                <input type="text" placeholder="Usuario">
+                <input type="password" placeholder="Contraseña">
+                <button>Entrar</button>
+            </form>
+          </section>
         <!--- Sobre mi --->
         
-        <div class="about"> <h2 id="about"> Sobre mi </h2>
-        <p> Mi nombre es Juan Pablo Mariño tengo 32 años, soy nacido en Mar del Plata, Buenos Aires, Argentina, actualmente me encuentro 
+        <section class="about"><text id="about">Sobre mi</text>
+        <p>Mi nombre es Juan Pablo Mariño tengo 32 años, soy nacido en Mar del Plata, Buenos Aires, Argentina, actualmente me encuentro 
          viviendo en Florencio Varela, estoy casado y tengo dos hijos, soy una persona autodidacta, que le interesa siempre
-           crecer en conocimientos y experiencias. </p>
-        </div>
-    </div>
+           crecer en conocimientos y experiencias.</p>
+        </section>
+    
 
         <!--- Experiencia --->
     <div class="container2">
@@ -114,43 +166,53 @@
 </div>
 <div class="DL" id="contact">
 <form id="DL" action="javascript:void(0);" method="post">
-    
+    <script type=text/javascript>
+    $(document).ready(function){
+        var db = null;
+
+        function Loadbd(params) {
+            db=openDatabase("ofertas_laborales")    
+        }
+        }
+    </script>
     <h2> Contacto </h2>
     <p> Datos Laborales</p>
+    <form action="main.js" method="POST" id="formulario">
     <br>Empresa
-    <br><input type="text" name="empresa" id="empresa"
-    placeholder="Empresa" size="35">
+    <br><input type="text" class="form-control" name="empresa" id="empresa"
+    placeholder="Empresa"  size="35">
     <br>Direccion laboral
-    <br><input type="text" name="direccion" id="direccion"
+    <br><input type="text" class="form-control" name="direccion" id="direccion"
     placeholder="Direccion" size="35">
     <br>Mail de contacto laboral
-    <br><input type="text" name="mail" id="mail"
+    <br><input type="text" class="form-control" name="mail" id="mail"
     placeholder="Mail" size="35">
     
     <br>Telefono laboral
-    <br><input type="text" name="telefono" id="telefono"
+    <br><input type="text" class="form-control" name="telefono" id="telefono"
     placeholder="Telefono" size="35">
     <br> 
     <p> Datos personales</p>
     <br>Nombre
-    <br><input type="text" name="nombre" id="nombre"
+    <br><input type="text" class="form-control" name="nombre" id="nombre"
     placeholder="Nombre" size="35">
     <br>Cargo laboral
-    <br><input type="text" name="cargo" id="cargo"
+    <br><input type="text" class="form-control" name="cargo" id="cargo"
     placeholder="Cargo laboral" size="35">
     <br> 
     <p> Oferta laboral</p>
     <br>Cargo ofrecido
-    <br><input type="text" name="cargo_ofrecido" id="cargo_ofrecido"
+    <br><input type="text" class="form-control" name="cargo_ofrecido" id="cargo_ofrecido"
     placeholder="Cargo ofrecido" size="35">
     <br>Carga horaria mensual
-    <br><input type="text" name="cantidad_de_hs" id="cantidad_de_hs"
+    <br><input type="text" class="form-control" name="cantidad_de_hs" id="cantidad_de_hs"
     placeholder="Carga horaria mensual" size="35">
     <br>Sueldo estimado
-    <br><input type="text" name="sueldo_estimado" id="sueldo_estimado"
+    <br><input type="text" class="form-control" name="sueldo_estimado" id="sueldo_estimado"
     placeholder="Sueldo estimado" size="35">
+</form>
     <br> 
-    <br><button type="submit">Guardar</button>
+    <br><button type="button" id="crear" class="btn btn-success">Guardar</button>
     <hr>
           
 </form>
@@ -160,5 +222,8 @@
 <li><a href="https://www.facebook.com/eloco" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a></li>
 <div class="fin"><p> Juan Pablo German Mariño 2022® </p></div> 
 </div>    
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="main.js"></script>
 </body>
+
 </html>
